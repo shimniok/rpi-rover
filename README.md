@@ -1,7 +1,6 @@
-Raspberry Pi Rover
+# Raspberry Pi Rover
 
-As Seen on Bot Thoughts Blog: 
-http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html
+As Seen on [Bot Thoughts Blog](http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html)
 
 Requires webiopi (0.7.0 as of this writing)
 
