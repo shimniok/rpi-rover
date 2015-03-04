@@ -3,6 +3,11 @@
 
 var GPIO = Array(54);
 
+var md = 11;
+var ain1 = 9;
+var ain2 = 10;
+var bin1 = 21;
+var bin2 = 22;
 
 $(document).ready(function() {
 	var left, right, top, button;
@@ -22,12 +27,12 @@ $(document).ready(function() {
   left = $( "#leftbuttons" );
   right = $( "#rightbuttons" );
 
-  setFunction(11, "OUT"); // mode
-  digitalWrite(11, 0);    // IN-IN mode
-  setFunction(9, "OUT");  // a phase
-  setFunction(10, "OUT"); // a enable
-  setFunction(21, "OUT"); // b phase
-  setFunction(22, "OUT"); // b enable
+  setFunction(md, "OUT"); // mode
+  digitalWrite(md, 0);    // IN-IN mode
+  setFunction(ain1, "OUT");  // a phase
+  setFunction(ain2, "OUT"); // a enable
+  setFunction(bin1, "OUT"); // b phase
+  setFunction(bin2, "OUT"); // b enable
 
   // Note that on iDevices, touchstart/touchend come first and
   // mousedown/mouseup are also fired, so you have to disable
@@ -101,43 +106,43 @@ function sign(x) {
 
 
 function fwd() {
-  digitalWrite(11, 0);
-  digitalWrite(9, 0);  // AIN1
-  digitalWrite(21, 0); // BIN1
-  digitalWrite(10, 1); // AIN2
-  digitalWrite(22, 1); // BIN2
+  digitalWrite(md, 0);
+  digitalWrite(ain1, 0);  // AIN1
+  digitalWrite(bin1, 0); // BIN1
+  digitalWrite(ain2, 1); // AIN2
+  digitalWrite(bin2, 1); // BIN2
 }
 
 function rev() {
-  digitalWrite(11, 0);
-  digitalWrite(9, 1);	 // AIN1
-  digitalWrite(10, 0); // AIN2
-  digitalWrite(21, 1); // BIN1
-  digitalWrite(22, 0); // BIN2
+  digitalWrite(md, 0);
+  digitalWrite(ain1, 1);	 // AIN1
+  digitalWrite(ain2, 0); // AIN2
+  digitalWrite(bin1, 1); // BIN1
+  digitalWrite(bin2, 0); // BIN2
 }
 
 function spinLeft() {
-  digitalWrite(11, 0);
-  digitalWrite(9, 1);	 // AIN1
-  digitalWrite(10, 0); // AIN2
-  digitalWrite(21, 0); // BIN1
-  digitalWrite(22, 1); // BIN2
+  digitalWrite(md, 0);
+  digitalWrite(ain1, 1);	 // AIN1
+  digitalWrite(ain2, 0); // AIN2
+  digitalWrite(bin1, 0); // BIN1
+  digitalWrite(bin2, 1); // BIN2
 }
 
 function spinRight() {
-  digitalWrite(11, 0);
-  digitalWrite(9, 0);	 // AIN2
-  digitalWrite(10, 1); // AIN2
-  digitalWrite(21, 1); // BIN2
-  digitalWrite(22, 0); // BIN2
+  digitalWrite(md, 0);
+  digitalWrite(ain1, 0);	 // AIN2
+  digitalWrite(ain2, 1); // AIN2
+  digitalWrite(bin1, 1); // BIN2
+  digitalWrite(bin2, 0); // BIN2
 }
 
 function stop() {
-  digitalWrite(11, 0);
-  digitalWrite(9, 0);	 // AIN1
-  digitalWrite(10, 0); // AIN2
-  digitalWrite(21, 0); // BIN1
-  digitalWrite(22, 0); // BIN2
+  digitalWrite(md, 0);
+  digitalWrite(ain1, 0);	 // AIN1
+  digitalWrite(ain2, 0); // AIN2
+  digitalWrite(bin1, 0); // BIN1
+  digitalWrite(bin2, 0); // BIN2
 }
 
 
